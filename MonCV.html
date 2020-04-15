@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Curriculum Vitae</title>
+    </head>
+    <body align="center">
+		<div><div style ="position : relative;  margin-left  : 5% ;  margin-top : 10px;  display : inline-block;"><b><u>Nom et prénom </u></b>: Najlae Zeroual</div>
+		<div style ="position : relative;  margin-right : 5% ;margin-left  : 51% ; margin-top : 10px; display : inline"><b><u>Linkedin</u></b>:<xsl:value-of select="Linkedin"></xsl:value-of></div></div>
+		<div><div style ="position : relative;  margin-right  : 5% ;margin-left  : 5% ; margin-top : 10px;display : inline-block;"><b><u>Age</u></b>:<xsl:value-of select="Age"></xsl:value-of></div>
+		<div style ="position : relative;  margin-right  : 5% ;margin-left  : 56% ; margin-top : 10px;display : inline-block;"><b><u>Github</u></b>:<xsl:value-of select="Github"></xsl:value-of></div></div>
+		<div ><div style ="position : relative;  margin-left  : 5% ;  margin-top : 10px; display : inline; "><b><u>Telephone</u></b>:<xsl:value-of select="Phone"></xsl:value-of></div>
+		<div style ="position : relative;  margin-left  : 53% ;  margin-top : 10px; display : inline-block; "><b><u>Email</u></b>:<xsl:value-of select="Email"></xsl:value-of></div>
+		</div>
+
+		<figure>
+		<p align="center">   
+			<img style=" position : relative; border-radius:50%; vertical-align  : middle; " src = "pic.jpg" height="140" width="120" />
+		</p>
+		</figure>
+		<div style=" position : absolute; margin-left  : 36% ;"><b> <xsl:value-of select="Description"></xsl:value-of></b></div>
+	</xsl:for-each>
+        
+<h3><font color="#2952a3">Formations</font></h3>
+<hr/>
+<xsl:for-each select="CurriculumVitae/Education/Educ">
+        <ul><b> <xsl:value-of select="Date"></xsl:value-of></b> 
+			:     <xsl:value-of select="Description"></xsl:value-of>
+		</ul><br/>
+       
+        </xsl:for-each>
+
+		<h3><font color="#2952a3">Expériences </font></h3>
+		<hr/>
+		  <font color="#2952ff"><u>STAGES </u></font><br /><br />
+        <xsl:for-each select="CurriculumVitae/ExperiencePro/Exp">
+
+        <li> <b><u> Lieu: </u></b><xsl:value-of select="Lieu"></xsl:value-of>
+			<ul><b><u>Sujet: </u></b><xsl:value-of select="Projet"></xsl:value-of></ul>
+			<ul><b><u>DateDebut: </u></b><xsl:value-of select="StartDate"></xsl:value-of></ul>
+			<ul><b><u>DateFin: </u></b><xsl:value-of select="EndDate"></xsl:value-of></ul>
+        </li>
+        <br />
+        </xsl:for-each>
+		 <font color="#2952ff"><u>PROJETS </u></font><br /><br />
+        <xsl:for-each select="CurriculumVitae/Projets/Proj">
+
+        <li> <xsl:value-of select="Name"></xsl:value-of>
+			<ul><u><b> Outil:</b></u><xsl:value-of select="Outils"></xsl:value-of></ul>
+		</li>
+        </xsl:for-each>
+		 
+		<h3><font color="#2952a3">Connaissances informatiques et linguistiques </font></h3>
+		<hr/>
+        <xsl:for-each select="CurriculumVitae/Skills">
+        <ul><b><u>Programming Languages :</u></b>:<xsl:value-of select="ProgrammingLanguages"></xsl:value-of></ul>
+        <ul><b><u>Compétances :</u></b>:<xsl:value-of select="Compétances"></xsl:value-of></ul>
+        <ul><b><u>Langues :</u></b>:<xsl:value-of select="Languages"></xsl:value-of></ul>
+		<ul><b><u>IDE :</u></b>:<xsl:value-of select="IDE"></xsl:value-of></ul>
+        </xsl:for-each>
+		
+		 
+		<h3><font color="#2952a3">Activites:</font></h3>
+		<hr/>
+        <xsl:for-each select="CurriculumVitae/ExtraCurricularActivities">
+        <ul><b><u>Name:</u></b><xsl:value-of select="Name"></xsl:value-of></ul>
+		</xsl:for-each>
+       
+
+    </body>
+</html>
